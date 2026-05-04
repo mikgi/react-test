@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 40px 40px 50px;
+    width: 100%;
+    max-width: 420px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form h2 {
+    text-align: center;
+    margin: 0 0 35px;
+    color: #1a202c;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+}
+
+div.form-control {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+div.form-control label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4a5568;
+    transition: color 0.3s ease;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f7fafc;
+    color: #2d3748;
+}
+
+.form input::placeholder {
+    color: #a0aec0;
+}
+
+.form input:focus {
+    border-color: #667eea;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+.form div.form-control:focus-within label {
+    color: #667eea;
+}
+
+div.form-control small {
+    color: #e53e3e;
+    position: absolute;
+    bottom: -22px;
+    left: 4px;
+    font-size: 12.5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+/* สำหรับจัดการ Error / Success ด้วย JavaScript ในอนาคต */
+div.form-control.error input {
+    border-color: #e53e3e;
+    background-color: #fff5f5;
+}
+
+div.form-control.error input:focus {
+    box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.15);
+}
+
+div.form-control.error small {
+    visibility: visible;
+    opacity: 1;
+    bottom: -20px;
+}
+
+div.form-control.success input {
+    border-color: #48bb78;
+    background-color: #f0fff4;
+}
+
+div.form-control.success input:focus {
+    box-shadow: 0 0 0 4px rgba(72, 187, 120, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #663d91 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
