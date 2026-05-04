@@ -31,14 +31,15 @@ const FormComponent = () => {
         // Name validation
         if (!formData.name.trim()) {
             newErrors.name = 'กรุณากรอกชื่อผู้ใช้';
-        } else if (formData.name.trim().length < 3) {
-            newErrors.name = 'กรุณากรอกชื่อผู้ใช้ 3 ตัวอักษรขึ้นไป';
+        } else if (formData.name.trim().length < 4) {
+            newErrors.name = 'กรุณากรอกชื่อผู้ใช้ 4 ตัวอักษรขึ้นไป';
         } else if (formData.name.trim().length > 15) {
             newErrors.name = 'กรุณากรอกชื่อผู้ใช้ไม่เกิน 15 ตัวอักษร';
         }
 
         // Email validation
-        const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        // const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!formData.email.trim()) {
             newErrors.email = 'กรุณากรอกอีเมล';
         } else if (!emailRegex.test(formData.email.trim())) {
@@ -106,7 +107,7 @@ const FormComponent = () => {
                     <small>{errors.password2 || 'Error message'}</small>
                 </div>
                 
-                <button type="submit">Submit</button>
+                <button type="submit">ลงทะเบียน</button>
             </form>
         </div>
     );
